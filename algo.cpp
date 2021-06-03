@@ -58,7 +58,7 @@ void processLine(string line, int step, ofstream &outfile){
         }else if(line.rfind("{") == line.length()-1){
             outfile << "Step " << step << ": Function declaration of " << line.substr(line.find(' ')+1, (line.find('(') - line.find(' ') - 1) ) << " with return type " << line.substr(0,line.find(' '));;
         }
-        if(line.find('{')){
+        if(line.find('{') != string::npos){
             outfile << " and start function block";
         }
         outfile << endl;
