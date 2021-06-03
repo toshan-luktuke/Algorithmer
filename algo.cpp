@@ -31,11 +31,12 @@ int main(){
 }
 
 //To-Do
-//Start blocks Partially DONE -> check after ifs and loops if they exist
+//Start blocks Partially DONE -> check after ifs and loops if they exist DONE
+//Starts blocks after functions are yet to be implemented
 //Initialization DONE
-//if statements
-//else if and else statements
-//for, while, do-while loops
+//if statements DONE
+//else if and else statements DONE
+//for, while, do-while loops DONE
 
 void processLine(string line, int step, ofstream &outfile){
     int l = line.length();
