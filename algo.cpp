@@ -51,11 +51,16 @@ void processLine(string line, int step, ofstream &outfile){
         return;
     }
     else if( (line.find("int")==0 || line.find("float")==0 || line.find("double")==0 || line.find("string")==0 || line.find("char")==0 || line.find("void")==0) && line.find("(") != string::npos && line.find(")") != string::npos && line.find("=") == string::npos){
+        //Functions
         if(line.rfind(";") == line.length()-1){//to ensure this is not variable declaration
-            outfile << "Step " << step <<  ": Function prototype declaration of return type " << line.substr(0,line.find(' ')) << " with name " << line.substr(line.find(' ')+1, (line.find('(') - line.find(' ') - 1)) << endl;  
+            outfile << "Step " << step <<  ": Function prototype declaration of return type " << line.substr(0,line.find(' ')) << " with name " << line.substr(line.find(' ')+1, (line.find('(') - line.find(' ') - 1));;  
         }else if(line.rfind("{") == line.length()-1){
-            outfile << "Step " << step << ": Function declaration of " << line.substr(line.find(' ')+1, (line.find('(') - line.find(' ') - 1) ) << " with return type " << line.substr(0,line.find(' '))<< endl;
+            outfile << "Step " << step << ": Function declaration of " << line.substr(line.find(' ')+1, (line.find('(') - line.find(' ') - 1) ) << " with return type " << line.substr(0,line.find(' '));;
         }
+        if(line.find('{')){
+            outfile << " and start function block";
+        }
+        outfile << endl;
         return;
     }
     else if(line.find("cout")==0){
