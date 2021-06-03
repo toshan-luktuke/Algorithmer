@@ -1,0 +1,16 @@
+Step 1: Preprocessor declaration <iostream>
+Step 2: Declaration of std namespace to be used
+Step 3: Function prototype declaration of return type int with name func
+Step 5: Function declaration of main with return type int
+Step 6: Initialize a,b; of data type int
+Step 7: Assign  a+b; to c  of data type int
+Step 8: Assign the value of  c+m; to d
+Step 9: Check if the condition  a == b is satisfied and start block
+Step 10: Assign the value of  Something; to Execute
+Step 11: End block
+Step 12: Initialise variable i=0 of data type int  Until condition i<10 is satisfied, at the end of the loop execute i++ and start block
+Step 13: Assign the value of  Something; to Execute
+Step 14: End block
+Step 15: Output:   "Welcome to C++!"   then end line and go to the next one
+Step 16: Return  0 to the user
+Step 17: End block

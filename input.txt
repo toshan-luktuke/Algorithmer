@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+int func(string);
+
+int main(){
+    int a,b;
+    int c = a+b;
+    d = c+m;
+    if( a == b){
+        Execute = Something;
+    }
+    for(int i=0;i<10;i++){
+        Execute = Something;
+    }
+    cout << "Welcome to C++!" << endl;
+    return 0;
+}
