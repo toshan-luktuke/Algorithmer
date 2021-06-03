@@ -11,7 +11,7 @@
 
 
 ### Words of Warning:
- -This program will work on most programs that utilize basic operations like loops, if statements etc.  
- -Arrays are not yet supported but "vector" should give you an output
- -If something goes wrong, try seperating your initializations  to different lines
- -Aur kuch bhayankar hua toh drop a message
+ - This program will work on most programs that utilize basic operations like loops, if statements etc.  
+ - Arrays are not yet supported but "vector" should give you an output
+ - If something goes wrong, try seperating your initializations to different lines
+ - Aur kuch bhayankar hua toh drop a message
