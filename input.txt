@@ -1,6 +1,6 @@
 //Sample input, change as you see fit
-
-
+/* Smaple multiline comment
+  Something that has been written = 10 */
 #include<iostream>
 using namespace std;
 int func(string);

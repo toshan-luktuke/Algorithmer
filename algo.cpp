@@ -7,6 +7,7 @@ void processLine(string, int, ofstream&);
 bool checkIf(string);
 bool checkLoop(string);
 bool checkDataType(string);
+string removeComments(string);
 
 int main(){
     ifstream infile;
@@ -18,12 +19,12 @@ int main(){
     while(getline(infile,line)){ //reads lines from a file
         //each line is one where a \n character is at the end
         //in resultant string, \n character does not appear
-        if(!line.empty()){
+        line = removeComments(line);
+        if(!line.empty() && line.find("*/") == string::npos){
             line = regex_replace(line, regex("^ +| +$|( ) +"), "$1"); //replace trailing, leading and extra spaces from the string
-            if(line.find("//") != 0 && line.find("/*") != 0){
-                processLine(line, i, outfile);
-                i++;
-            }
+            processLine(line, i, outfile);
+            i++;
+            
         }
 
     }
@@ -186,4 +187,42 @@ bool checkDataType(string line){
     || line.find("double") != string::npos || line.find("long") != string::npos \
     || line.find("vector") != string::npos || line.find("string") != string::npos \
     || line.find("char") != string::npos);
+}
+
+string removeComments(string prgm)
+{
+    int n = prgm.length();
+    string res;
+ 
+    // Flags to indicate that single line and multiple line comments
+    // have started or not.
+    bool s_cmt = false;
+    bool m_cmt = false;
+ 
+ 
+    // Traverse the given program
+    for (int i=0; i<n; i++)
+    {
+        // If single line comment flag is on, then check for end of it
+        if (s_cmt == true && prgm[i] == '\n')
+            s_cmt = false;
+ 
+        // If multiple line comment is on, then check for end of it
+        else if  (m_cmt == true && prgm[i] == '*' && prgm[i+1] == '/')
+            m_cmt = false,  i++;
+ 
+        // If this character is in a comment, ignore it
+        else if (s_cmt || m_cmt)
+            continue;
+ 
+        // Check for beginning of comments and set the approproate flags
+        else if (prgm[i] == '/' && prgm[i+1] == '/')
+            s_cmt = true, i++;
+        else if (prgm[i] == '/' && prgm[i+1] == '*')
+            m_cmt = true,  i++;
+ 
+        // If current character is a non-comment character, append it to res
+        else  res += prgm[i];
+    }
+    return res;
 }
