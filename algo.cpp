@@ -18,10 +18,13 @@ int main(){
     while(getline(infile,line)){ //reads lines from a file
         //each line is one where a \n character is at the end
         //in resultant string, \n character does not appear
-
-        line = regex_replace(line, regex("^ +| +$|( ) +"), "$1"); //replace trailing, leading and extra spaces from the string
-        processLine(line, i, outfile);
-        i++;
+        if(!line.empty()){
+            line = regex_replace(line, regex("^ +| +$|( ) +"), "$1"); //replace trailing, leading and extra spaces from the string
+            if(line.find("//") != 0 && line.find("/*") != 0){
+                processLine(line, i, outfile);
+                i++;
+            }
+        }
 
     }
 
