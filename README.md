@@ -15,4 +15,5 @@
  - Arrays are not yet supported but "vector" should give you an output
  - If something goes wrong, try seperating your initializations to different lines
  - Object initialization will require some input from the user to be translated into acceptable algorithm language
+ - Please use single line comments in normal English on different lines as far as possible, they may give errors
  - Aur kuch bhayankar hua toh drop a message
