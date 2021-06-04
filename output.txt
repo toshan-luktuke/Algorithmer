@@ -1,18 +1,18 @@
-Step 1: Preprocessor declaration <iostream>
-Step 2: Declaration of std namespace to be used
-Step 3: Function prototype declaration of return type int with name func
-Step 5: Function declaration of main with return type int
-Step 6: Initialize a,b; of data type int
-Step 7: Assign  a+b; to c  of data type int
-Step 8: Assign the value of  c+m; to d
-Step 9: Check if the condition  a == b is satisfied and start block
-Step 10: Assign the value of  Something; to Execute
-Step 11: End block
-Step 12: Initialise variable i=0 of data type int  Until condition i<10 is satisfied, at the end of the loop execute i++ and start block
-Step 13: Assign the value of  Something; to Execute
-Step 14: End block
-Step 15: Output:   "Welcome to C++!"   then end line and go to the next one
-Step 16: Return  0 to the user
-Step 17: End block
-
-//Output of program in input.txt
+Step 4: Preprocessor declaration <iostream>
+Step 5: Declaration of std namespace to be used
+Step 6: Function prototype declaration of return type int with name func
+Step 8: Function declaration of main with return type int and start function block
+Step 9: Function prototype declaration of return type int with name a,b;
+Step 10: Assign the value of  Student(10, 15); to Student s
+Step 12: Function prototype declaration of return type int with name c = a+b;
+Step 13: Assign the value of  c+m; to d
+Step 14: Check if the condition  a == b is satisfied and start block
+Step 15: Assign the value of  Something; to Execute
+Step 16: End block
+Step 17: Function declaration of i=0;i<10;i++){ with return type for(int and start function block
+Step 18: Assign the value of  Something; to Execute
+Step 19: Break out of the loop 
+Step 20: End block
+Step 21: Output:   "Welcome to C++!"   then end line and go to the next one
+Step 22: Return  0 to the user
+Step 23: End block

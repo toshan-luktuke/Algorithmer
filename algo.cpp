@@ -32,7 +32,7 @@ int main(){
 
 //To-Do
 //Start blocks Partially DONE -> check after ifs and loops if they exist DONE
-//Starts blocks after functions are yet to be implemented
+//Starts blocks after functions are yet to be implemented DONE
 //Initialization DONE
 //if statements DONE
 //else if and else statements DONE
@@ -51,7 +51,7 @@ void processLine(string line, int step, ofstream &outfile){
         outfile << "Step " << step << ": Declaration of std namespace to be used" << endl;
         return;
     }
-    else if( (line.find("int")==0 || line.find("float")==0 || line.find("double")==0 || line.find("string")==0 || line.find("char")==0 || line.find("void")==0) && line.find("(") != string::npos && line.find(")") != string::npos && line.find("=") == string::npos){
+    else if( checkDataType(line) || (line.find("void") == 0) && line.find("(") != string::npos && line.find(")") != string::npos && line.find("=") == string::npos){
         //Functions
         if(line.rfind(";") == line.length()-1){//to ensure this is not variable declaration
             outfile << "Step " << step <<  ": Function prototype declaration of return type " << line.substr(0,line.find(' ')) << " with name " << line.substr(line.find(' ')+1, (line.find('(') - line.find(' ') - 1));;  
@@ -152,7 +152,19 @@ void processLine(string line, int step, ofstream &outfile){
         }
         outfile << endl;
     }
-    
+    else if(line.find("break") != string::npos){ //break statement
+        outfile << "Step " << step << ": Break out of the loop " << endl;
+    }
+    else if(line.find("continue") != string::npos){//continue statement
+        outfile << "Step " << step << ": Continue with the loop " << endl; 
+    }
+    else if(line.find("=") != string::npos && line.find('(') != string::npos && line.find(')') != string::npos && !checkIf(line) && !checkLoop(line) && !checkDataType(line)){
+        //Object initialization
+        //Student s = Student();
+        outfile << "Step " << step << ":";
+        outfile << " Initialize object of type " << line.substr(0, line.find(' ') - 0) << " with name " << line.substr(line.find(' ')+1, line.find('=')-line.find(' ')-1);
+        outfile << endl;
+    }
 }
 
 bool checkIf(string line){

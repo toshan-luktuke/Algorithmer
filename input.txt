@@ -7,6 +7,8 @@ int func(string);
 
 int main(){
     int a,b;
+    Student s = Student(10, 15);
+
     int c = a+b;
     d = c+m;
     if( a == b){
@@ -14,6 +16,7 @@ int main(){
     }
     for(int i=0;i<10;i++){
         Execute = Something;
+        break;
     }
     cout << "Welcome to C++!" << endl;
     return 0;
