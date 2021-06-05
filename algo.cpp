@@ -58,12 +58,12 @@ void processLine(string line, int step, ofstream &outfile){
     else if( checkDataType(line) || (line.find("void") == 0) && line.find("(") != string::npos && line.find(")") != string::npos && line.find("=") == string::npos){
         //Functions
         if(line.rfind(";") == line.length()-1){//to ensure this is not variable declaration
-            outfile << "Step " << step <<  ": Function prototype declaration of return type " << line.substr(0,line.find(' ')) << " with name " << line.substr(line.find(' ')+1, (line.find('(') - line.find(' ') - 1));;  
+            outfile << "Step " << step <<  ": Declare function prototype of return type " << line.substr(0,line.find(' ')) << " with name " << line.substr(line.find(' ')+1, (line.find('(') - line.find(' ') - 1));;  
         }else if(line.rfind("{") == line.length()-1){
-            outfile << "Step " << step << ": Function declaration of " << line.substr(line.find(' ')+1, (line.find('(') - line.find(' ') - 1) ) << " with return type " << line.substr(0,line.find(' '));;
+            outfile << "Step " << step << ": Declare function " << line.substr(line.find(' ')+1, (line.find('(') - line.find(' ') - 1) ) << " with return type " << line.substr(0,line.find(' '));;
         }
         if(line.find('{') != string::npos){
-            outfile << " and start function block";
+            outfile << " and start of function block";
         }
         outfile << endl;
         return;
